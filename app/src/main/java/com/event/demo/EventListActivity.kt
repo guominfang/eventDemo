@@ -3,6 +3,7 @@ package com.event.demo
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -31,6 +32,10 @@ class EventListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEventListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //沉浸式状态栏
+
+        //沉浸式状态栏
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

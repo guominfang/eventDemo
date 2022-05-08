@@ -20,7 +20,7 @@
         </activity>
 
         <activity android:name=".EventListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.EventDemo.NoActionBar"/>
     </application>
 
 </manifest>

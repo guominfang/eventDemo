@@ -2,6 +2,6 @@
     <string name="app_name">EventDemo</string>
     <string name="add_content">add content</string>
     <string name="add">add</string>
-    <string name="search">search</string>
+    <string name="search">content list</string>
 
 </resources>

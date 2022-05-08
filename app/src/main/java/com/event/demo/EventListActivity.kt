@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.event.demo.databinding.ActivityEventListBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 /**
  * @author gmf
@@ -25,11 +28,17 @@ class EventListActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivityEventListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
+        val adapter = EventAdapter()
+        binding.recyclerView.adapter = adapter
+
+        lifecycleScope.launch {
+            viewModel.allEventList.collectLatest { adapter.submitData(it) }
+        }
     }
 }

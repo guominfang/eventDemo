@@ -1,14 +1,9 @@
 package com.event.demo
 
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.blankj.utilcode.util.BarUtils
 import com.event.demo.banner.BannerAdapter
 import com.event.demo.banner.BannerViewModel
@@ -39,10 +34,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addContent() {
-//        val newContent = binding.inputText.text.trim()
-//        if (newContent.isNotEmpty()) {
-//            viewModel.insert(newContent)
-//            binding.inputText.setText("")
-//        }
+        val code = binding.inputcode.text.trim().toString()
+        if (code.isNotEmpty()) {
+            viewModel.update(code.toInt())
+            binding.inputcode.setText("")
+        }
     }
 }

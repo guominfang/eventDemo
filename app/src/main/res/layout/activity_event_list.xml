@@ -17,11 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="20dp"
+            app:contentScrim="@android:color/transparent"
+            app:expandedTitleGravity="center|bottom"
+            app:expandedTitleTextAppearance="@style/ExpandedAppBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:statusBarScrim="@android:color/transparent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:title="UPCOMING EVENTS">
 
             <ImageView
                 android:id="@+id/headImage"
@@ -35,12 +36,27 @@
                 app:layout_collapseParallaxMultiplier="0.8"
                 app:layout_scrollFlags="scroll|snap|enterAlways|enterAlwaysCollapsed" />
 
-            <androidx.appcompat.widget.Toolbar
+            <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleCentered="true"
+                app:titleMargin="0dp"
+                app:titleMarginEnd="0dp"
+                app:titleMarginStart="0dp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_icon"
+                app:layout_collapseMode="pin"
+                app:tint="@color/dark_gray" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 

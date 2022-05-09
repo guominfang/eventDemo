@@ -39,7 +39,10 @@
             android:layout_width="40dp"
             android:layout_height="?attr/actionBarSize"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/ic_icon"
             app:tint="@color/dark_gray" />
 
@@ -77,6 +80,8 @@
                 android:textStyle="italic" />
 
             <EditText
+                android:id="@+id/inputcode"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/add_content" />

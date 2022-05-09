@@ -30,4 +30,12 @@ class EventViewModel(private val dao: EventDao) : ViewModel() {
     fun insert(text: CharSequence) = ioThread {
 //        dao.insert(Event(id = 0, content = text.toString()))
     }
+
+    fun update(id: Int) = ioThread {
+        val event = dao.findEventById(id)
+        event?.state = 1
+        if (event != null) {
+            dao.updateEvent(event)
+        }
+    }
 }

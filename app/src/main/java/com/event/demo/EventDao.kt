@@ -18,7 +18,7 @@ interface EventDao {
     fun allEventByContent(): PagingSource<Int, Event>
 
     @Query("SELECT * FROM Event WHERE id = :id")
-    fun findEventById(id: Int): Event
+    fun findEventById(id: Int): Event?
 
     @Insert
     fun insert(events: List<Event>)

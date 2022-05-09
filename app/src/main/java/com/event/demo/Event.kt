@@ -12,6 +12,6 @@ import androidx.room.PrimaryKey
 data class Event(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val content: String,
-    val state: Int,
+    var state: Int,
     val time: Long
 )

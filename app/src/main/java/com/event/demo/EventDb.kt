@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
  * @description
  * @date 2022/5/8.
  */
-@Database(entities = [Event::class], version = 1)
+@Database(entities = [Event::class], version = 1, exportSchema = false)
 abstract class EventDb : RoomDatabase() {
 
     abstract fun eventDao(): EventDao
@@ -39,7 +39,14 @@ abstract class EventDb : RoomDatabase() {
         private fun fillInDbContent(context: Context) {
             ioThread {
                 get(context).eventDao().insert(
-                    LOCAL_DATA.map { Event(id = 0, content = it) }
+                    LOCAL_DATA.map {
+                        Event(
+                            id = 0,
+                            content = it,
+                            state = 1,
+                            time = System.currentTimeMillis()
+                        )
+                    }
                 )
             }
         }

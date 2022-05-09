@@ -28,6 +28,6 @@ class EventViewModel(private val dao: EventDao) : ViewModel() {
         .cachedIn(viewModelScope)
 
     fun insert(text: CharSequence) = ioThread {
-        dao.insert(Event(id = 0, content = text.toString()))
+//        dao.insert(Event(id = 0, content = text.toString()))
     }
 }

@@ -9,4 +9,9 @@ import androidx.room.PrimaryKey
  * @date 2022/5/8.
  */
 @Entity
-data class Event(@PrimaryKey(autoGenerate = true) val id: Int, val content: String)
+data class Event(
+    @PrimaryKey(autoGenerate = true) val id: Int,
+    val content: String,
+    val state: Int,
+    val time: Long
+)

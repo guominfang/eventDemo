@@ -19,6 +19,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="@android:color/transparent"
             app:expandedTitleGravity="center|bottom"
+
             app:expandedTitleTextAppearance="@style/ExpandedAppBar"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:statusBarScrim="@android:color/transparent"
